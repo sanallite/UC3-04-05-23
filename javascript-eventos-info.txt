@@ -1,0 +1,28 @@
+Então pessoal uma breve descrição sobre o material de apoio:
+nestes dias temos falado e trabalhado a funcionalidade dos eventos
+presentes no JavaScript. 
+Como tenho dito, o Script é uma forma de interação com o usuário.
+Quando o cliente acessar o site, o site dialogará com ele através de 
+elementos scripts, seja através de uma mensgem ou uma ação disparada 
+como exemplo: Quando o mouse passar sobre um elemento da página, dispara um evento,
+ou quando houver um clique no botão uma funcionalidade(função) pode ser executada. 
+Esses eventos então são incluídos na página e disparados de acordo com a programação. 
+
+ 
+
+Por último falamos sobre o LocalStorage, explicando o que é localStorage:
+O LocalStorage é útil porque permite que os sites personalizem sua experiência de uso 
+e ofereçam um serviço mais conveniente. No entanto, é importante ressaltar que o 
+LocalStorage só pode ser acessado pelo site que o criou. Isso significa que outros 
+sites não podem ver ou acessar as informações armazenadas no LocalStorage do seu 
+navegador.
+
+ 
+
+Em resumo, o LocalStorage é uma ferramenta que os sites usam para armazenar
+informações no seu navegador, como preferências do usuário e dados temporários. 
+Ele torna a sua experiência de navegação mais personalizada e conveniente, permitindo 
+que os sites lembrem de suas escolhas e evitando que você perca dados importantes ao 
+atualizar ou fechar a página.
+Finalizando nesse material de apoio, temos uma descrição simplificada de cada um desses
+eventos e um pequeno código mostrando como referenciar o tal evento no JavaScript.

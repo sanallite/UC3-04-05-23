@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage e-mail</title>
+</head>
+
+<body>
+    <div id="cadastroid">
+        <h1>Cadastre seu nome e email para ganhar uma coxinha!</h1>
+
+        <input type="text" id="nomeid">
+        <input type="email" name="" id="correioid">
+        <input type="button" value="Quero uma coxinha!" onclick="coxinha()">
+    </div>
+
+    <h1 id="respostaid"></h1>
+
+    <script>
+        /* Letras finais: vr = variável, id = identificador, it = item armazenado, itvr = variável que representa um item armazenado que foi pego*/
+
+        function coxinha() { let nomevr= document.getElementById('nomeid').value;   
+            let correiovr= document.getElementById('correioid').value;
+
+            if (nomevr && correiovr) {
+                localStorage.setItem('nomeit', nomevr);
+                localStorage.setItem('correioit', correiovr); /* .correiovr; Não é assim que se faz o localStorage, o .value depois dos parênteses serve apenas para definir que a variável será o valor do elemento pego pelo identificador. */
+
+                resultado();
+            }
+
+            else { alert("É necessário informar o nome e o email para participar, tente novamente!");
+            }
+        }
+
+        function resultado() { let respostavr= document.getElementById("respostaid");
+            let nomeitvr= localStorage.getItem('nomeit');
+            let correioitvr= localStorage.getItem('correioit');
+            /* Mão esqueça de pegar os itens para usá-los nas novas funções, e eles precisam ser transformados em variáveis para  */
+
+            let cadastrovr= document.getElementById('cadastroid');
+            cadastrovr.style.display="none";
+
+            respostavr.innerHTML= "Certo " + nomeitvr + ", seu email, " + correioitvr + " foi cadastrado na nossa lista, o sorteio da coxinha será dia 31 de junho!";
+        }
+        /* É necessário declarar que algo é uma função para que os comandos funcionem, se fosse apenas resultado() {}, não funcionaria. */
+        
+        window.onload= function() { let nomeArmazenado= localStorage.getItem('nomeit');
+            let emailArmazenado= localStorage.getItem('correioit');
+
+            if (nomeArmazenado && emailArmazenado) { resultado();
+            }
+            // Ao carregar a página será executada uma função implícita que irá pegar os itens armazenados e se eles forem verdadeiros, ou em outras palavras, se tiver algo armazenado lá, será executada a função resultado, neste caso não sendo necessário adicionar os parâmetros das variáveis criadas apartir dos itens armazenados, mas também funcionaria dessa forma; No material de apoio foram definidos parâmetros, então tome cuidado na revisão
+        }
+    </script>
+</body>
+</html>

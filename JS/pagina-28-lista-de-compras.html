@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Lista de Compras</title>
+    <link rel="stylesheet" href="css/estiloPg28.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="conteudo">
+        <div class="principal">
+            <form class="adicionar" id="novoItem">
+                <span>Lista de Compras</span>
+
+                <label for="produtona">Produto</label>
+                <input type="text" name="produtona" id="produtoid" required>
+                <!-- Campo requerido -->
+
+                <label for="quantidadena">Quantidade</label>
+                <input type="number" name="quantidadena" id="quantidadeid" required>
+
+                <input type="submit" value="Adicionar" class="cadastrarcl" id="cadastrarid">
+            </form>
+        </div>
+
+        <ul class="listacl" id="listaid">
+        </ul>
+    </main>
+
+    <script src="arquivos-javascript/pg28.js"></script>
+</body>
+</html>

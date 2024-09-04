@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos com o mouse</title>
+</head>
+
+<body>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color: #d94a38; width: 120px; height: 20px; padding: 40px; color: aliceblue;">
+        Está com dúvidas? passa o mouse aqui!
+    </div>
+
+    <script>
+        function mOver(obj) { obj.innerHTML="Consulte o manual...";
+        }
+
+        function mOut(obj) { obj.innerHTML="Dúvidas???";
+        }
+    </script>
+</body>
+</html>

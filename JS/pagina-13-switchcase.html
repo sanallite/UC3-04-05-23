@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case</title>
+</head>
+
+<body>
+    <h1>Escolha uma opção:</h1>
+
+    <script>
+        let nome=prompt("Digite o seu nome :");
+        let opcs=prompt("Que dia é hoje?\n 1- Segunda, 2- Terça, 3- Quarta, 4- Quinta, 5- Sexta, 6- Sábado, 7- Domingo")
+
+        switch(opcs) {
+            case "1":
+                document.write(nome+"<br>")
+                document.write("Hoje é segunda-feira");
+            break;
+
+            case "2":
+                document.write(nome+"<br>")
+                document.write("Hoje é terça-feira");
+            break;
+
+            case "3":
+                document.write(nome+"<br>")
+                document.write("Hoje é quarta-feira");
+            break;
+
+            case "4":
+                document.write(nome+"<br>")
+                document.write("Hoje é quinta-feira");  
+            break;
+
+            case "5":
+                document.write(nome+"<br>")
+                document.write("Hoje é sexta-feira, traga mais cerveja");
+            break;
+
+            case "6":
+                document.write(nome+"<br>")
+                document.write("Hoje é sábado");
+            break;
+
+            case "7":
+                document.write(nome+"<br>")
+                document.write("Hoje é domingo");
+            break;
+
+            default:
+            document.write("Opção inválida "+nome+", são aceitos apenas números de 1 a 7.");
+        }
+    </script>
+</body>
+</html>

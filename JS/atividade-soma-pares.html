@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma dos números pares listados</title>
+</head>
+
+<body>
+    <script>
+        let inicial= parseInt(prompt("Digite o número inícial"));
+
+        let final= parseInt(prompt("Digite o número final"));
+
+        let soma=0;
+
+        for (let num=inicial; num<=final; num++) {
+            if (num%2===0) {
+                document.write (num+ ", ");
+                soma=soma+num;
+            }
+        }
+
+        document.write("<br>A soma total é: "+soma);
+        // Resultado da soma de todos os números que foram listados.
+    </script>    
+</body>
+</html>

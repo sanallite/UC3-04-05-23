@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Validação de formúlarios - Contatos</title>
+    <link rel="stylesheet" href="css/estiloPg27.css">
+</head>
+
+<body>
+    <main>
+        <p id="mensagem-finalid"></p>
+
+        <form id="formuDados" name="formuDados">
+            <h2>Inscreva-se abaixo:</h2>
+
+            <span id="mensagem-nome"></span>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome!">
+
+            <span id="mensagem-telefone"></span>
+            <input type="text" id="telefone" name="telefone" placeholder="Digite seu telefone!">
+
+            <span id="mensagem-email"></span>
+            <input type="text" id="email" name="email" placeholder="Digite seu e-mail!">
+
+            <input type="submit" value="Enviar" onclick="cadastro()">
+        </form>
+    </main>
+
+    <script>
+        function cadastro() { event.preventDefault();
+            let nome= document.getElementById('nome').value;
+            let telefone= document.getElementById('telefone').value;
+            let email= document.getElementById('email').value;
+
+            if (nome === '') { document.getElementById('mensagem-nome').textContent= 'O campo nome é obrigatório';
+                // return; pesquisar mais!
+            }
+
+            else { document.getElementById('mensagem-nome').textContent= '';
+                localStorage.setItem('nomeit', nome);
+                // Citação 1 - Ele só irá armazenar o valor se o campo não estiver em branco, e se caso a página for recarregada o valor continuará na caixa do input, pois o valor exibido, não o armazenado, será limpo apenas se todos os campos forem preenchidos, já que apenas nesse caso será ativada a função do formulário completo.
+            }
+
+            if (telefone === '') { document.getElementById('mensagem-telefone').textContent= 'O campo telefone é obrigatório';
+                // return;
+            }
+
+            else { document.getElementById('mensagem-telefone').textContent= '';
+                localStorage.setItem('telit', telefone);
+            }
+
+            if (email === '') { document.getElementById('mensagem-email').textContent= 'O campo e-mail é obrigatório';
+                // return;
+            }
+
+            else { document.getElementById('mensagem-email').textContent= '';
+                localStorage.setItem('emailit', email);
+            }
+
+            if (nome === '' && email === '' && telefone === '') {
+                document.getElementById('mensagem-nome').textContent= 'Este campo é obrigatório';
+
+                document.getElementById('mensagem-telefone').textContent= 'Este campo é obrigatório';
+
+                document.getElementById('mensagem-email').textContent= 'Este campo é obrigatório';
+                return;
+            }
+
+            if (nome && email && telefone) {
+                formCompleto();
+                // Citação 2
+            }
+        }
+
+        function formCompleto() { let mensagemFinalvr= document.getElementById('mensagem-finalid');
+
+            let nomeitvr= localStorage.getItem('nomeit');
+
+            let formCompleto= document.getElementById('formuDados');
+
+            formCompleto.style.display="none";
+
+            document.getElementById('nome').value= '';
+            document.getElementById('telefone').value= '';
+            document.getElementById('email').value= '';
+            // Consulte citações 1 e 2.
+
+            mensagemFinalvr.innerHTML= "Ok " + nomeitvr + ", seus dados foram enviados";
+            // Evite nomear variáveis com traço, neste caso funcionou no id, mas não na vr
+        }
+    </script>
+</body>
+</html>

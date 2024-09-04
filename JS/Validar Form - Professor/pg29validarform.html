@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos</title>
+    <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <form id="formDados" name="formDados">
+            <h2>Inscreva-se abaixo:</h2><br>
+            <span id="mensagem-nome"></span>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome!">
+            <span id="mensagem-telefone"></span>
+            <input type="text" id="telefone" name="telefone" placeholder="Digite seu telefone!">
+            <span id="mensagem-email"></span>
+            <input type="text" id="email" name="email" placeholder="Digite seu e-mail!">
+            <input type="submit" value="Enviar" onclick="cadastro()">
+
+        </form>
+        <span id="mensagem"></span>
+
+    </main>
+<script>
+    function cadastro(){
+        event.preventDefault();
+        var nome = document.getElementById('nome').value;
+        var telefone = document.getElementById('telefone').value;
+        var email = document.getElementById('email').value;
+        if (nome === ''){
+            document.getElementById('mensagem-nome').textContent = 'O campo nome é obrigatório';
+            return;
+        }else{
+            document.getElementById('mensagem-nome').textContent = '';
+            localStorage.setItem('nomeArmazenado',nome);
+        }
+        if (telefone === ''){
+            document.getElementById('mensagem-telefone').textContent = 'O campo telefone é obrigatório';
+            return;
+        }else{
+            document.getElementById('mensagem-telefone').textContent = '';
+            localStorage.setItem('telefoneArmazenado',telefone);
+        }
+        if (email === ''){
+            document.getElementById('mensagem-email').textContent = 'O campo e-mail é obrigatório';
+            return;
+        }else{
+            document.getElementById('mensagem-email').textContent = '';
+            localStorage.setItem('emailArmazenado',email);
+        }
+        exibirMensagem();
+        esconderFormulario()
+            document.getElementById('nome').value = '';
+            document.getElementById('telefone').value = '';
+            document.getElementById('email').value = '';
+    }
+  
+
+    function exibirMensagem(){
+            var nomeArmazenado = localStorage.getItem('nomeArmazenado');
+            var telefoneArmazenado = localStorage.getItem('telefoneArmazenado');
+            var emailArmazenado = localStorage.getItem('emailArmazenado');
+            var mensagem = document.getElementById('mensagem');
+            mensagem.innerHTML = 'Bem-Vindo(a)'+ nomeArmazenado +'! <br> O e-mail digitado foi:'+emailArmazenado + '<br> Telefone armazenado foi:'+telefoneArmazenado;
+            
+        }
+
+         function esconderFormulario(){
+            var formulario = document.getElementById('formDados');
+            formulario.style.display='none';
+        }
+        window.onload = function(){
+            var nomeArmazenado = localStorage.getItem('nomeArmazenado');
+            var emailArmazenado = localStorage.getItem('emailArmazenado');
+            if (nomeArmazenado && emailArmazenado){
+                exibirMensagem(nomeArmazenado,emailArmazenado);
+                esconderFormulario();
+            }
+        }
+
+</script>
+    
+</body>
+</html>

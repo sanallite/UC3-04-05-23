@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Máscara de texto, telefone</title>
+</head>
+
+<body>
+    <form>
+        <label for="telid">Telefone:</label>
+        <input type="tel" id="telid" oninput="formatarTelefone()"></input>
+        <!-- On input, assim que se começar a digitar -->
+    </form>
+
+    <script>
+        // Estude JQuery!
+        function formatarTelefone() { let inputTel= document.getElementById('telid');
+            let valor= inputTel.value;
+
+            valor= valor.replace(/\D/g, '');
+            // Irá remover todos os caractéres que não são numéricos.
+
+            valor= valor.replace(/^(\d{2})(\d)/g,'($1) $2');
+            valor= valor.replace(/(\d)(\d{4})$/,'$1-$2');
+            // Adiciona os parênteses e o traçao ao telefone.
+
+            inputTel.value= valor;
+            // Atualiza o campo de telefone.
+        }
+    </script>
+</body>
+</html>

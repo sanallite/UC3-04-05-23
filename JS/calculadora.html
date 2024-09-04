@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperCalc2023</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Atividade:
+        Elaborar um sistema web que receba dois valores (números).
+        Com esses dois valores efetuar cálculos.
+        Mediante a escolha do usuário, poderá ser realizado o cálculo de multiplicação, divisão, adição ou subtração entre esses dois valores.
+    -->
+
+    <h1>Calculando números pelo JavaScript, utilizando o SwitchCase</h1>
+
+    <input type="button" value="Iniciar" onclick="calculadora()">
+
+    <script>
+        function calculadora() {
+            let op = prompt("Digite a operação desejada: adição, subtração, multiplicação ou divisão");
+            let v1 = Number(prompt("Digite o primeiro valor"));
+            let v2 = Number(prompt("Digite o segundo valor"));
+
+            alert("Sua operação foi calculada, pressione OK para continuar.");
+
+            document.write
+                ("<!DOCTYPE html> <head> <style> body {font-family:Tahoma;} </style> </head> <h1>Calculando números pelo JavaScript, utilizando o SwitchCase</h1>");
+
+            switch (op) {
+                case "adição":
+                    re = v1 + v2;
+                    document.write("<p>A operação escolhida foi: " + op + ".</p> <p>Os números escolhidos foram: " + v1 + " e " + v2 + ".</p> <p>O resultado é: " + re + ".</p>");
+                break;
+                // + re + é uma concatenação, uma ligação , ou seja, nesse caso, que é um document.write, será escrito a string mais o valor armazenado da variável re
+
+                case "subtração":
+                    re = v1 - v2;
+                    document.write("<p>A operação escolhida foi: " + op + ".</p> <p>Os números escolhidos foram: " + v1 + " e " + v2 + ".</p> <p>O resultado é: " + re + ".</p>");
+                break;
+                // O break interrompe a continuidade da estrutura, caso contrário, todos os casos serão executados, nesse caso todos os cálculos serão feitos.
+
+                case "multiplicação":
+                    re = v1 * v2;
+                    document.write("<p>A operação escolhida foi: " + op + ".</p> <p>Os números escolhidos foram: " + v1 + " e " + v2 + ".</p> <p>O resultado é: " + re + ".</p>");
+                break;
+
+                case "divisão":
+                    if (v2>0) {
+                        re = v1 / v2;
+                        document.write("<p>A operação escolhida foi: " + op + ".</p> <p>Os números escolhidos foram: " + v1 + " e " + v2 + ".</p> <p>O resultado é: " + re + ".</p>");
+                    }
+
+                    else {
+                        document.write("<p>A operação escolhida foi: " + op + ".</p> <p>Os números escolhidos foram: " + v1 + " e " + v2 + ".</p> <p>Essa divisão é impossível.</p>");
+                    }
+                break;
+
+                default:
+                    document.write("Opção Inválida, tente novamente");
+            }
+        }
+    </script>
+</body>
+</html>

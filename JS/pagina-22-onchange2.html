@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de textos</title>
+
+    <script>
+        function executarAcao(acao) {
+            if (acao=== 'change') {
+                alert ("Houve uma alteração no texto.");
+            }
+
+            else if (acao=== 'click') {
+                alert ("O botão foi clicado.");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p>
+        <input type="text" onchange="executarAcao('change')" value="Modifique o texto aqui">
+    </p>
+
+    <p>
+        <input type="button" onclick="executarAcao('click')" value="Clique aqui">
+    </p>
+
+    <!-- Para não confundir, se coloca uma string com aspas simples, se o camando que ela está dentro, já estiver de aspas duplas, o contrário também fode funcionar -->
+</body>
+</html>

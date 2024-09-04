@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio dos comandos JS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+
+    <style>
+        body {background-color: yellow;
+            font-family: 'Comic Neue', cursive;
+            text-align: center;
+        }
+
+        input {width: 10%;
+            font-size: 1em;
+            margin: auto;
+            background-color: black;
+            color: azure;
+            border-style: none;
+        }
+
+        figure img {width:50%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pronto para começar?</h1>
+
+    <input type="button" value="Sim" onmouseover="sim()">
+
+    <figure>
+        <img src="fauna.jpeg" alt="Nerdy Fau Fau">
+    </figure>
+
+    <script>
+        function sim() { let primeiro=prompt("Tem certeza?");
+            switch (primeiro) {
+                case "sim": certeza();
+                break;
+
+                case "não": alert ("Ok, tudo bem...");
+                window.close();
+                break;
+
+                case "fauna": alert ("Isso mesmo, a fau fau te ama!");
+                    open("https://www.youtube.com/@CeresFauna");
+                    window.close();
+                break;
+
+                default: alert ("Escolha inválida!!!");
+                location.reload();
+            }
+        }
+
+        function certeza() { let confirmado=confirm("Absoluta?");
+            if (confirmado) { alert("Certo, daqui a dez segundos começará o desafio.");
+                setTimeout(cadastro, 10000);
+            }
+
+            else { alert("Ok, tudo bem...");
+                window.close();
+            }
+        }
+        
+        function cadastro() { clearTimeout(cadastro);
+            let nome=prompt("Me diga seu nome");
+            let idade=parseInt(prompt("E agora sua idade"));
+
+            if (idade<=99) { alert("Você não tem idade suficiente para fazer o desafio.");
+                window.location.reload();
+            }
+
+            else if (idade>299) { alert("Você não tem idade suficiente para fazer o desafio.");
+                location.reload();
+            }
+            else if (idade>100) { 
+                alert ("Muito bom "+nome+"! O desafio começará agora...");
+                open("https://youareanidiot.cc/");
+                window.close;
+                /* Para fechar uma página, é necessário declarar o window, mas não para recarregar, bastando usar o location, com o window ficando ímplicito */
+            }
+
+            else { alert ("Idade Inválida!!");
+                window.reload();
+            }
+        }
+    </script>
+</body>
+</html>

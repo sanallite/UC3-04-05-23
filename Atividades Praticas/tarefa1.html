@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Armazenamento de Dados</title>
+    <style>
+        #selecao { display: none;
+        }
+
+        form {margin: 1em auto;
+        }   
+    </style>
+</head>
+
+<body>
+    <h1>Cadastre-se</h1>
+
+    <form>
+        <input type="text" id="nome" placeholder="Nome" required>
+
+        <input type="email" id="correio" placeholder="E-mail" required>
+
+        <input type="text" id="cpf" placeholder="CPF" required>
+
+        <input type="tel" id="telefone" placeholder="Telefone" required>
+
+        <input type="submit" value="Adicionar" id="adicionar" onclick="armazenar()">
+
+        <input type="button" value="Apagar todos os dados" id="apagarTudo" onclick="limparTudo()">
+
+        <input type="button" value="Apagar dado específico" id="apagarUm" onclick="mostrarOpcoes()">
+    </form>
+
+    <form id="selecao">
+        <input type="checkbox" name="limparNome" class="opcoes" id="limparNomeid">
+        <label for="limparNome">Apague o nome</label>
+        
+        <input type="checkbox" name="limparEmail" class="opcoes" id="limparEmailid">
+        <label for="limparEmail">Apague o email</label>
+        
+        <input type="checkbox" name="limparTel" class="opcoes" id="limparTelid">
+        <label for="limparTel">Apague o telefone</label>
+        
+        <input type="checkbox" name="limparCpf" class="opcoes" id="limparCpfid">
+        <label for="limparCpf">Apague o CPF</label>
+
+        <input type="button" onclick="limparUm()" value="Apagar selecionados">
+    </form>
+
+    <script>
+        function armazenar() { let nomevr= document.getElementById("nome").value;
+        if (nomevr) { localStorage.setItem("nomeit", nomevr) }
+
+        let correiovr= document.getElementById("correio").value;
+        if (correiovr) { localStorage.setItem("correioit", correiovr) }
+
+        let cpfvr= document.getElementById("cpf").value;
+        if (cpfvr) { localStorage.setItem("cpfit", cpfvr) }
+
+        let telefonevr= document.getElementById("telefone").value;
+        if (telefonevr) { localStorage.setItem("telefoneit", telefonevr) }
+        }
+
+        function limparTudo() { localStorage.clear();
+            alert ("Dados apagados com sucesso.");
+        }
+
+        function mostrarOpcoes() { let selecaovr= document.getElementById("selecao");
+            selecaovr.style.display="block";
+        }
+
+        let limparNomevr= document.getElementById("limparNomeid");
+        let limparEmailvr= document.getElementById("limparEmailid");
+        let limparTelvr= document.getElementById("limparTelid");
+        let limparCpfvr= document.getElementById("limparCpfid");
+
+        function limparUm() { 
+            if (limparNomevr.checked) {
+                localStorage.removeItem('nomeit');
+            }
+            
+            if (limparEmailvr.checked) {
+                localStorage.removeItem('correioit');
+            }
+            
+            if (limparTelvr.checked) {
+                localStorage.removeItem('telefoneit');
+            }
+
+            if (limparCpfvr.checked) {
+                localStorage.removeItem('cpfit');
+            }
+
+            if (limparNomevr.checked || limparEmailvr.checked || limparTelvr.checked || limparCpfvr.checked) {
+                alert ("Dados apagados com sucesso.");
+            }
+        }
+        /* Não consegui fazer funcionar utilizando o switch case, e para fazer o if funcionar foi necessário verificar se o elemento representado pela variável foi checado, já que é uma checkbox, en vez de apenas criar a variável se o elemento estiver checado.*/
+    </script>
+</body>
+</html>

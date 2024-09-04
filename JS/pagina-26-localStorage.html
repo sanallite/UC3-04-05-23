@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armazenamento local</title>
+
+    <style>
+        body { background-color: limegreen;
+            color: azure;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        p { display: block;
+            float: left;
+            margin: 1em;
+        }
+
+        #mensagem { clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="a">
+        <!-- <p id="msgid"></p> -->
+    </main>
+
+    <p id="mensagem"></p>
+
+    <script>
+        window.localStorage.setItem("nome","Márcio Teodoro");
+        /* Atenção as letras maiúsculas e mínúsculas */
+
+        window.localStorage.setItem("wife","Ceres Fauna");
+
+        let div=document.getElementById("a");
+
+        // let msgvar=document.getElementById("msgid");
+        let mensagemvar= document.getElementById('mensagem');
+
+        console.log(localStorage.nome);
+
+        div.innerHTML= 
+            "<p>" + localStorage.nome + "</p>"
+            + "<p>" + localStorage.wife + "</p>";
+
+        // msgvar.innerHTML= "Consulte as páginas armazenar-nome e atividade-armazenar-email para o material da aula";
+        // Isso não funciona pois varíavel div está subscrevendo todo o conteúdo do elemento main que tem a id "a", e como o paragráfo com a id "msgid" está dentro do main, ele será subscrito.
+
+        mensagemvar.innerHTML= "Consulte as páginas armazenar-nome e atividade-armazenar-email para o material da aula";
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Máscara de texto - CPF</title>
+</head>
+
+<body>
+    <input type="text" id="cpf" oninput="formatarCPF()">
+
+    <script>
+        function formatarCPF() { let inputCPF= document.getElementById('cpf');
+            let valor= inputCPF.value;
+
+            valor= valor.replace(/\D/g, '');
+            // Remove todos os caracteres que não são números.
+
+            valor= valor.replace(/(\d{3})(\d)/, '$1.$2');
+            valor= valor.replace(/(\d{3})(\d)/, '$1.$2');
+            valor= valor.replace(/(\d{3})(\d{1,2})/, '$1-$2');
+            // Adciona os pontos e o traço conforme necessário.
+
+            inputCPF.value= valor;
+            // Atualiza o valor no campo de entrada.
+        }
+    </script>
+</body>
+</html>

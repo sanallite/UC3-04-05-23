@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de pares</title>
+</head>
+
+<body>
+    <script>
+        let inicio= parseInt(prompt("Digite o número inícial:"));
+        // Convertendo em números o que for digitado no campo
+
+        let fim= parseInt(prompt("Digite o número final:"));
+        // Convertendo em um número inteiro utilizando o parseInt, e esta é a forma mais correta de se utilizar nesse caso
+
+        let j=1;
+
+        for (let i=inicio; i<=fim; i++)
+        { if(i%2===1) 
+            // Três iguais signifca que o valor deve ser exatamente igual ao valor desejado, se for texto/string tem que ser texto, e se for múmero ter que ser número
+
+            // O símbolo de porcentagem é utilizado para calcular o resto da divisão, com 0 sendo o resto para números pares e 1 para ímpares
+
+            { document.write(j, "- ", i , "<br>");
+            j++; 
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+* { margin: 0;
+    padding: 0;
+}
+
+body { background-color: #f0f0f0;
+}
+
+main { margin: auto;
+    margin-top: 9.375em;
+    width: 50em;
+    height: 37.5em;
+    box-shadow: 0 0 0.31em #999;
+    background: #fff;
+    padding-top: 6.25em;
+    border-radius: 0.75em;
+}
+
+span { font-size: 0.875em;
+    color: #f00;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 { color: mediumseagreen;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+form { margin: 0 auto;
+    width: 31.25em;
+}
+
+input[type="text"] { display: block;
+    padding: 0.93em;
+    border-radius: 0.31em;
+    width: 18.75em;
+    background-color: #fff;
+    margin-bottom: 1.875em;
+}
+
+input[type="submit"] { display: block;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 0.31em;
+    background-color: mediumseagreen;
+    padding: 0.625em 1.875em;
+    cursor: pointer;
+}

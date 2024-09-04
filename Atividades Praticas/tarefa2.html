@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos do JS</title>    
+    <style>
+        #imagem { width: 199.5714285714286px;
+            height: 260.7142857142857px;
+            position: fixed;
+            top: 246px;
+            right: 246px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Encontre a Ina escondida</h1>
+
+    <div id="imagem" onmouseenter="encontrada()" onmouseleave="esconder()" onclick=escolha()>
+        <!-- Não consegui fazer funcionar o onkeydown dentro de uma div -->
+    </div>
+
+    <script>
+        let imgEncontrada= document.getElementById("imagem");
+
+        function encontrada() { 
+            let imagemIna= document.createElement("img");
+            imagemIna.setAttribute("src", "https://img3.gelbooru.com/images/19/83/19839bf0968320eff1ed2b351212f353.png");
+            imagemIna.setAttribute("width", "199.5714285714286px");
+            imagemIna.setAttribute("height", "260.7142857142857px");
+            /* Não consegui colocar uma imagem local na src */
+            
+            imgEncontrada.appendChild(imagemIna);
+
+            let parabens= document.createElement("p");
+            parabens.textContent= "Parabéns, você a encontrou! Clique aqui para continuar.";
+
+            imgEncontrada.appendChild(parabens);
+        }
+
+        function esconder() { imgEncontrada.textContent="";
+        }
+
+        function escolha() { let escolhaNum= parseInt(prompt("Escolha um número de um a dez."));
+
+            if (escolhaNum <=5) { let pergunta1= prompt("Pergunta, em qual ano começou a segunda guerra Sino-Japonesa?\n A- 1938, B- 1937, C- 1895, D- 1941.");
+                switch(pergunta1) {
+                    case ("A"):
+                        alert ("Quase, resposta incorreta!");
+                    break;
+
+                    case ("B"):
+                        alert ("Isso mesmo, resposta correta!");
+                    break;
+
+                    case ("C"):
+                        alert ("Resposta incorreta! Esse foi o ano da primeira guerra Sino-Japonesa.");
+                    break;
+
+                    case ("D"):
+                        alert ("Esse foi o ano do ínicio da guerra Japonesa-Americana, resposta incorreta!");
+                    break;
+                    
+                    default:
+                        alert ("Insira uma resposta, com a letra maiúscula!");
+                }       
+            }
+        
+
+            else if (escolhaNum <=10) { let pergunta2= prompt("Pergunta, você gosta de cookies?");
+                switch (pergunta2) {
+                    case ("sim"):
+                        alert ("Que bom! se você se juntar ao nosso grupo, vai poder comer cookies de graça todo dia...");
+                        window.open ("https://youtube.com/@NinomaeInanis");
+                    break;
+
+                    case ("Sim"):
+                        alert ("Que bom! se você se juntar ao nosso grupo, vai poder comer cookies de graça todo dia...");
+                        window.open ("https://youtube.com/@NinomaeInanis");
+                    break;
+
+                    default:
+                        alert ("Que pena :(");
+                        window.close();
+                }
+            }
+
+            else { alert ("Vou repetir, escolha um número de um a dez.");
+            }
+        }
+    </script>
+</body>
+</html>

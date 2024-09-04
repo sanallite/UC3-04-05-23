@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage - armazenar nome</title>
+
+</head>
+
+<body>
+    <div id="formulario">
+        <h1>Armazene teu nome</h1>
+        <label for="nome">Digite-o:</label>
+        <input type="text" name="" id="nome">
+        <button onclick="armazenarNome()">Armazenar</button>
+    </div>
+
+    <h2 id="mensagem"></h2>
+
+    <script>
+        function armazenarNome() { let nome= document.getElementById('nome').value;
+            localStorage.setItem('nomeArmazenado',nome);
+            exibirMensagem();
+            /* Chame a outra função para aparecer a mensagem, se não, apenas será armazenado o que foi colocado na caixa de texto. */
+        }
+        /* Não confunda o nome id com o nome variável e com o nome nome */
+
+        function exibirMensagem() { let nomeArmazenado= localStorage.getItem('nomeArmazenado');
+            let mensagem= document.getElementById('mensagem');
+            mensagem.innerHTML= 'Bem vindo(a), ' + nomeArmazenado + '!';
+            esconderForm();
+        }
+
+        function esconderForm() { var formulario= document.getElementById('formulario');
+            formulario.style.display='none';
+        }
+
+        window.onload= function() { let nomeArmazenado= localStorage.getItem('nomeArmazenado');
+            if (nomeArmazenado) { exibirMensagem(nomeArmazenado);
+                esconderForm();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+
+Atividade:
+
+   Elaborar um sistema WEB que receba 2 valores (numeros). 
+
+   com esses dois valores efetuar cálculos:
+mediante a escolha do usuário, pode ser realizado o cálculo de 
+multiplicação, divisão, adição ou subtração entre esses dois valores
+
+Atividade resolvida:
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case</title>
+</head>
+<body>
+    <h1>Escolha uma opção</h1>
+    <script>
+        var v1=prompt("Digite um valor :");
+        var v2=prompt("Digite o segundo valor :");
+        var op=prompt("+(adição), -(subtração), *(Multiplicação), /(Divisão):");
+        switch(op){
+            case "+":
+                result=(Number(v1)+Number(v2))
+                document.write("a soma entre eles é:"+result);
+                break;
+            case "-":
+                result=(Number(v1)-Number(v2))
+                document.write("a subtração entre eles é: "+result);
+                break;
+            case "*":
+                result=(Number(v1)*Number(v2))
+                document.write("a Multiplicação entre eles é: "+result);
+                break;
+            case "/":
+                if (v2>0){
+                result=(Number(v1)/Number(v2))
+                document.write("a Divisão entre eles é: "+result);
+                }else{
+                document.write("a Divisão é impossível : "+v2);
+                }
+                break;
+            default:
+                 document.write("opção inválida, é aceito apenas Números de 1 a 5");
+               
+
+
+        }
+
+    </script>
+    
+</body>
+</html>
+   
+   

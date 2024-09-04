@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem regressiva</title>
+</head>
+
+<body>
+    <!-- Fazer um script que receba um valor e depois efetuar a contagem regressiva desse valor até chegar ao ZERO. -->
+
+    <script>
+        let n=parseInt(prompt("Faltam quantos segundos para o ano novo?"));
+
+        while (n>=0) { document.write(n +"... ");
+            n=n-1;
+            // n--; Também poderia ser feito dessa forma, nesse caso não sendo necessário dizer que n é igual a algo, pois o n-- já estará subtraindo o n por 1 no loop.
+        }
+        // A variável n precisa ser maior ou igual que zero para que o número do prompt possa ser subtraído, caso contrário, deveria ser digitado um número negativo, mas ainda não fiz funcionar esse último caso.
+
+        document.write("<br>Feliz 2024!")
+    </script>
+</body>
+</html>

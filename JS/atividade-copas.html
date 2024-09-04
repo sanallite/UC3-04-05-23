@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anos das copas do mundo</title>
+</head>
+
+<body>
+    <script>
+        function virgula() { document.write (", ");
+        }
+
+        function copa(ano) { document.write (ano);
+            virgula();
+        }
+
+        let ano=1930;
+
+        while (ano<=2026) {
+            if (ano===1942) {
+                ano=ano+4;
+            }
+
+            if (ano==1946) {
+                ano=ano+4;
+            }
+            
+            // if (ano===1942 || ano===1946) {
+            //     ano=ano+8;
+            // } Para usar duas condições ao mesmo tempo, é necessário usar o sinal de ou || e nesse caso aumentar a contagem para +8, pois ele contará à partir do 1942, já que é a primeira condição verdadeira. Mas o 1946 precisa ser pulado também, porque se somar apenas quatro anos, ele aparecerá.
+
+            // if (ano===1942) {
+            //      ano=ano+8;
+            // } Essa seria uma forma simplificada, já que os múmeros 42 e 46 seriam os próximos a serem exibidos, então ele conta o ano 1942, mas não o exibe, e soma 8 e o resultado é 1950, que será o próximo número exibido na tela.
+
+            copa(ano);
+            ano=ano+4;
+
+            // Enquanto o ano da copa for menor ou igual a 2026, o script irá ativar a função de escrita e acionar o contador, mas se os anos forem 1942 e 1946, ele apenas acionara o contador, ou seja, não escreverá esses anos, pois a definição especifica para eles tem apenas o contador.
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando coisas do JS</title>
+</head>
+
+<body>
+    <h1>Lista DPI</h1>    
+
+    <input type="text" id="cpf" oninput="formatarCPF()">
+
+    <script>
+        let funcionarios= ['Márcio', ' Maria', ' Bianca', ' Nicolas', ' Misael', ' João', ' Pedro'];
+
+        for (let ndefnc= 0; ndefnc<funcionarios.length; ndefnc++) {
+            document.write ("<p> "+ndefnc+"- "+funcionarios[ndefnc]+" </p>");
+        }
+        
+        /* Esse loop for irá percorrer os itens da array funcionarios, mas antes de ser executado, ele criará a várivel ndefnc que será igual a 0. 
+        
+        Esse loop terá a condição de continuar sendo executado apenas se a variável ndefnc for menor que o número total, ou tamanho total dos valores da array funcionarios, que nesse caso é 6, contando a partir do 0.
+        
+        E ao final de cada loop será excutado o comando que incrementa o valor de ndefnc em 1.
+        
+        Já o que esse loop executará, será escrever na tela, dentro de um parágrafo, a variável que está dentro da array funcionários que tem o mesmo valor da variável ndefnc, além de escrever o próprio valor de ndenfc e fará isso enquanto o valor de ndefnc for menor que o valor total de variáveis que estão dentro da array funcionários, nesse caso, 6.
+
+        Se a condição fosse, por exemplo, que o valor de ndefnc fosse menor ou igual a 4. o for seria executado até a variável que tem o valor 4 dentro da array, que nesse caso é o nome Misael.
+        */
+
+        function formatarCPF() { let inputCPF= document.getElementById('cpf');
+            let valor= inputCPF.value;
+
+            valor= valor.replace(/\D/g, '');
+            // Remove todos os caractéres que não são números
+
+            valor= valor.replace(/(\d{3})(\d)/, '$1 -final da primeira string- $2');
+            // O que foi colocado entre os dois cifrões será inserido após o final da string, que tem 3 caracteres
+
+            valor= valor.replace(/(\d{3})(\d)/, '$1 -final da segunda string- $2');
+//
+            inputCPF.value= valor;
+        }
+    </script>
+</body>
+</html>
